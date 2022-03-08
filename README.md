@@ -13,6 +13,7 @@ INFURA_API_ENDPOINT="<>"
 ```
 
 ### Metamask:
+**Only need if you want to deploy on `Rinkeby` - not needed for local testing** (see `hardhat.config.js`)
 * Export private key from metamask wallet and copy into .env file (wallet to deploy from)
 * Ensure wallet has some funds (for testing use a `Rinkeby` testnet faucet)
 
