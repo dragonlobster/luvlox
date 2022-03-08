@@ -1,0 +1,9 @@
+# ignore node modules
+node_modules/
+
+# ignore artifacts/cache
+artifacts/
+cache/
+
+# ignore .env
+.env
