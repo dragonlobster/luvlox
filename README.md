@@ -18,6 +18,7 @@ INFURA_API_ENDPOINT="<>"
 * Ensure wallet has some funds (for testing use a `Rinkeby` testnet faucet)
 
 ### Infura:
+**Only need if you want to deploy on `Rinkeby` - not needed for local testing** (see `hardhat.config.js`)
 * Sign up for an infura account, create a project, and set it to Rinkeby Network
 * Copy the https API endpoint they provide and put it in the .env file
 
@@ -36,7 +37,7 @@ Test:
 npm test
 ```
 
-Deploy (Rinkeby Testnet):
+Deploy (Rinkeby Testnet) - don't do this for local development - costs ether from testnet `Rinkeby` network:
 ```sh
 npm run deploy
 ```
@@ -65,7 +66,7 @@ In the `beforeEach` function, we already deployed the contract from the first ac
 contract = await factory.deploy("Love Chain", "lc"); // deploy the contract - deploys with first wallet from hardhat node
 ```
 
-The first argument is the public name of the contract that everyone wll see, the second is the abbreviation (can be anything)
+The first argument is the public name of the contract that everyone will see, the second is the abbreviation (like symbol of nft token) (can be anything)
 
 `test`:
 ```javascript
@@ -79,7 +80,7 @@ it("checks tokenURI for nft", async () => {
   })
 ```
 
-This test calls `mintLock` function from the contract with a value of 0.1 ethers (needs to be converted to `wei` which is why we use `parseEther` function); if less than `0.1` ether is in the value, the minting will fail because of the line in our contract (`contracts/LoveChain.sol`):
+This test calls `mintLock` function from the contract with a value of `0.1 ether` (needs to be converted to `wei` which is why we use `parseEther` function); if less than `0.1 ether` is in the value, the minting will fail because of the line in our contract (`contracts/LoveChain.sol`):
 
 ```javascript
 require(msg.value >= loveLockPrice, "Ether value sent was incorrect");
