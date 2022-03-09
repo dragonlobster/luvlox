@@ -8,7 +8,7 @@ async function main() {
     console.log("Account balance:", (await deployer.getBalance()).toString());
 
     const factory = await ethers.getContractFactory(process.env.CONTRACT_NAME);
-    const contract = await factory.deploy("Love Chain", "lc");
+    const contract = await factory.deploy("LuvLox", "lux");
 
     console.log("Contract address:", contract.address);
 }

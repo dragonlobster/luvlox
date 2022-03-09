@@ -1,4 +1,4 @@
-# Love Chain
+# LuvLox
 
 A smart contract that allows couples or best friends to lock their love on the ethereum blockchain
 
@@ -7,7 +7,7 @@ You will need to create a `.env` file in the `ROOT` directory with the following
 
 `.env`:
 ```sh
-CONTRACT_NAME="LoveChain"
+CONTRACT_NAME="LuvLox"
 METAMASK_PRIVATE_KEY="<>"
 INFURA_API_ENDPOINT="<>"
 ```
@@ -57,13 +57,13 @@ Further, we override OpenZeppelin's `_baseURI` as intended - this automatically 
 
 Tests are extremely important in order to avoid security exploit by bad actors. We are using `hardhat` suite which creates a local blockchain and tests the contract on that.
 
-We are using `node` library `chai` for testing. Tests are written like this (in `test/LoveChain.js`):
+We are using `node` library `chai` for testing. Tests are written like this (in `test/LuvLox.js`):
 
 
 In the `beforeEach` function, we already deployed the contract from the first account provided by hardhat - that means before every test we will deploy a fresh contract to the local `hardhat` blockchain:
 
 ```javascript
-contract = await factory.deploy("Love Chain", "lc"); // deploy the contract - deploys with first wallet from hardhat node
+contract = await factory.deploy("LuvLox", "lux"); // deploy the contract - deploys with first wallet from hardhat node
 ```
 
 The first argument is the public name of the contract that everyone will see, the second is the abbreviation (like symbol of nft token) (can be anything)
@@ -80,7 +80,7 @@ it("checks tokenURI for nft", async () => {
   })
 ```
 
-This test calls `mintLock` function from the contract with a value of `0.1 ether` (needs to be converted to `wei` which is why we use `parseEther` function); if less than `0.1 ether` is in the value, the minting will fail because of the line in our contract (`contracts/LoveChain.sol`):
+This test calls `mintLock` function from the contract with a value of `0.1 ether` (needs to be converted to `wei` which is why we use `parseEther` function); if less than `0.1 ether` is in the value, the minting will fail because of the line in our contract (`contracts/LuvLox.sol`):
 
 ```javascript
 require(msg.value >= loveLockPrice, "Ether value sent was incorrect");
@@ -107,5 +107,3 @@ You can add your own scripts here for convenience instead of trying to memorize 
 # Progress
 
 We will need to write more tests and refine the contract as needed.
-
-We may need to change the name because `LoveChain` seems to be taken; let's see.

@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 //import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract LoveChain is ERC721Enumerable, Ownable {
+contract LuvLox is ERC721Enumerable, Ownable {
 
     uint256 public constant loveLockPrice = 0.01 ether; // price of each lock
     bool public saleIsActive; // activate the sale

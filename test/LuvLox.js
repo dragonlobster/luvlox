@@ -16,7 +16,7 @@ describe("Token contract", function () {
     [owner, addr1, addr2] = await ethers.getSigners(); // equivalent to web3.eth.getAccounts - set owner to first
 
     const factory = await ethers.getContractFactory(process.env.CONTRACT_NAME); // abstraction that follows factory pattern to deploy contracts
-    contract = await factory.deploy("Love Chain", "lc"); // deploy the contract - deploys with first wallet from hardhat node
+    contract = await factory.deploy("LuvLox", "lux"); // deploy the contract - deploys with first wallet from hardhat node
 
     await contract.flipSaleState() // activate sale
 
