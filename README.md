@@ -63,7 +63,7 @@ We are using `node` library `chai` for testing. Tests are written like this (in 
 In the `beforeEach` function, we already deployed the contract from the first account provided by hardhat - that means before every test we will deploy a fresh contract to the local `hardhat` blockchain:
 
 ```javascript
-contract = await factory.deploy("LuvLox", "lux"); // deploy the contract - deploys with first wallet from hardhat node
+contract = await factory.deploy("LuvLox", "LUX"); // deploy the contract - deploys with first wallet from hardhat node
 ```
 
 The first argument is the public name of the contract that everyone will see, the second is the abbreviation (like symbol of nft token) (can be anything)
