@@ -10,7 +10,7 @@ describe("Token contract", function () {
   let addr1 // eth address 1;
   let addr2 // eth address 2;
   let contract // contract;
-  const mintOptions = {value: ethers.utils.parseEther("0.1")} // mint options; set value to 0.1 eth (cost of nft)
+  const mintOptions = {value: ethers.utils.parseEther("0.01")} // mint options; set value to 0.01 eth (cost of nft)
 
   beforeEach(async () => {
     [owner, addr1, addr2] = await ethers.getSigners(); // equivalent to web3.eth.getAccounts - set owner to first

@@ -37,7 +37,7 @@ contract LuvLox is ERC721Enumerable, Ownable {
         saleIsActive = !saleIsActive;
     }
 
-    function mintLock() public payable {
+    function mintLux() public payable {
         require(saleIsActive, "Sale is not active");
         require(msg.value >= loveLockPrice, "Ether value sent was incorrect");
 
